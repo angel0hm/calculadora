@@ -1,0 +1,39 @@
+{
+  "pantalla": {
+    "fg_color": "#f9f9f9",
+    "text_color": "#232931",
+    "font": ["Roboto", 25],
+    "corner_radius": 10
+  },
+  "marco": {
+    "bg_color": "#f9f9f9"
+  },
+  "primary": {
+    "fg_color": "#80BEFC",
+    "hover_color": "#6FB6FD",
+    "text_color": "#E8F4FF",
+    "font": ["Roboto", 25, "bold"],
+    "corner_radius": 20
+  },
+  "secondary": {
+    "fg_color": "#CDF1FC",
+    "hover_color": "#C1EFFD",
+    "text_color": "#ffffff",
+    "font": ["Roboto", 25, "bold"],
+    "corner_radius": 20
+  },
+  "info": {
+    "fg_color": "#ADD2F7",
+    "hover_color": "#BAD9F8",
+    "text_color": "#67B3FF",
+    "font": ["Roboto", 25, "bold"],
+    "corner_radius": 20
+  },
+  "success": {
+    "fg_color": "#80BEFC",
+    "hover_color": "#6FB6FD",
+    "text_color": "#E8F4FF",
+    "font": ["Roboto", 25, "bold"],
+    "corner_radius": 20
+  }
+}

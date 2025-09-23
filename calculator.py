@@ -35,3 +35,32 @@ def calculate(expr):
 def get_historial():
     """Devuelve el historial de operaciones"""
     return historial
+
+# ---------------- Memoria ----------------
+def memory_clear():
+    """Limpia la memoria"""
+    global memoria
+    memoria = 0.0
+
+
+def memory_recall():
+    """Devuelve el valor almacenado"""
+    return memoria
+
+
+def memory_add(value):
+    """Suma a la memoria"""
+    global memoria
+    try:
+        memoria += float(value)
+    except:
+        pass
+
+
+def memory_subtract(value):
+    """Resta de la memoria"""
+    global memoria
+    try:
+        memoria -= float(value)
+    except:
+        pass

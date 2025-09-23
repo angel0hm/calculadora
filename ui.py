@@ -9,7 +9,7 @@ def resource_path(relative_path):
     try:
         base_path = sys._MEIPASS
     except Exception:
-        base_path = os.path.abspath(".")
+        base_path = os.path.abspath("Calculadora_v1")
     return os.path.join(base_path, relative_path)
 
 # Abrir JSON
@@ -148,8 +148,22 @@ def crear_ui(root):
                 texto.insert("end", item + "\n")
         texto.configure(state="disabled")
 
+        # ---------------- Funciones de memoria ----------------
+        def memoria_sumar():
+            calculator.memory_add(entrada.get())
+    
+        def memoria_restar():
+            calculator.memory_subtract(entrada.get())
+    
+        def memoria_recall():
+            entrada.set(str(calculator.memory_recall()))
+    
+        def memoria_clear():
+            calculator.memory_clear()
+
     # ---------------- Botones ----------------
     botones = [
+        ("MC", memoria_clear), ("MR", memoria_recall), ("M+", memoria_sumar), ("M-", memoria_restar),
         ("Ac", borrar_todo), ("⌫", borrar_uno), ("÷", lambda: click_boton("/")), ("×", lambda: click_boton("*")),
         ("7", lambda: click_boton("7")), ("8", lambda: click_boton("8")), ("9", lambda: click_boton("9")), ("-", lambda: click_boton("-")),
         ("4", lambda: click_boton("4")), ("5", lambda: click_boton("5")), ("6", lambda: click_boton("6")), ("+", lambda: click_boton("+")),
@@ -204,3 +218,4 @@ if __name__ == "__main__":
     root.geometry("350x500")
     crear_ui(root)
     root.mainloop()
+

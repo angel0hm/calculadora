@@ -1,27 +1,26 @@
-# ---------------- Lógica de la calculadora ----------------
-
 historial = []
-
+memoria = 0.0
 
 def add_to_expression(expr, value):
-    """Agrega un valor a la expresión"""
+    #Agrega un valor a la expresión
     return expr + str(value)
 
 
 def clear_all():
-    """Borra todo el contenido"""
+    #Borra todo el contenido
     return ""
 
 
 def clear_one(expr):
-    """Borra el último carácter"""
+    #Borra el último carácter
     return expr[:-1]
 
 
 def calculate(expr):
-    """Evalúa la expresión y guarda en historial"""
+    #Evalúa la expresión y guarda en historial
     global historial
     try:
+        expr = expr.replace("%", "/100")
         result = float(eval(expr))
         result_formatted = "{:.2f}".format(result) 
         historial.append(expr + " = " + result_formatted)
@@ -33,32 +32,31 @@ def calculate(expr):
 
 
 def get_historial():
-    """Devuelve el historial de operaciones"""
+    #Devuelve el historial de operaciones
     return historial
 
 # ---------------- Memoria ----------------
 def memory_clear():
-    """Limpia la memoria"""
+    #Limpia la memoria
     global memoria
     memoria = 0.0
 
 
 def memory_recall():
-    """Devuelve el valor almacenado"""
+    #Devuelve el valor almacenado
     return memoria
 
 
 def memory_add(value):
-    """Suma a la memoria"""
+    #Suma a la memoria
     global memoria
     try:
         memoria += float(value)
     except:
         pass
 
-
 def memory_subtract(value):
-    """Resta de la memoria"""
+    #Resta a la memoria
     global memoria
     try:
         memoria -= float(value)

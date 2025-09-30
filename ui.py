@@ -5,7 +5,7 @@ import sys
 import os 
 
 def resource_path(relative_path):
-    """Obtiene la ruta correcta de un recurso, incluso dentro del exe."""
+    #Obtiene la ruta correcta de un recurso
     try:
         base_path = sys._MEIPASS
     except Exception:
@@ -114,7 +114,7 @@ def crear_ui(root):
 
     # ---------------- Funciones de la calculadora ----------------
     def click_boton(valor_logico, valor_mostrar=None):
-        """Agrega a la expresión el valor lógico, pero muestra valor_mostrar si se da"""
+
         if valor_mostrar is None:
             valor_mostrar = valor_logico
             
@@ -242,3 +242,4 @@ if __name__ == "__main__":
     root.geometry("350x500")
     crear_ui(root)
     root.mainloop()
+
